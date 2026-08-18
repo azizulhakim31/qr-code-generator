@@ -57,7 +57,7 @@ function generateQR() {
     message.style.display = "none";
     input.value = "";
     qrCodeGenerated = true;
-}
+};
 
 function downloadQR() {
     if (!qrCodeGenerated) {
@@ -71,7 +71,13 @@ function downloadQR() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-}
+};
 
 generateBtn.addEventListener("click", generateQR);
-downloadBtn.addEventListener("click", downloadQR)
+downloadBtn.addEventListener("click", downloadQR);
+
+input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        generateQR();
+    }
+});
