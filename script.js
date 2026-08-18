@@ -34,4 +34,34 @@ function generateQR() {
 
     ctx.fillstyle = "white";
     ctx.fillRect(0, 0, totalSize, totalSize);
+
+    for (let row = 0; row < moduleCount; row++) {
+
+        for (let col = 0; col < moduleCount; col++) {
+
+            if (qr.isDark(row, col)) {
+                ctx.fillstyle = "black";
+                ctx.fllRect(
+                    (col + magin) * cellSize,
+                    (row + margin) * cellSize,
+                    cellSize,
+                    cellSize
+                );
+            }
+        }
+    }
+
+    canvas.style.display = "block";
+    message.style.display = "none";
 }
+
+
+input.addEventListener(
+    "keydown",
+    function (event) {
+        if (event.key === "Enter") {
+
+            generateQR();
+        }
+    }
+)
