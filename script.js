@@ -7,6 +7,8 @@ const ctx = canvas.getContext("2d");
 
 const message = document.getElementById("message");
 
+let qrCodeGenerated = false;
+
 function generateQR() {
     const text = input.value.trim();
 
@@ -53,6 +55,23 @@ function generateQR() {
 
     canvas.style.display = "block";
     message.style.display = "none";
+    input.value = "";
+    qrCodeGenerated = true;
+}
+
+function downloadQR() {
+    if (!qrCodeGenerated) {
+        alert("Generate a QR code first.")
+        return;
+    }
+
+    const link = document.createElement("a");
+    link.download = "qr-code.png";
+    link.href = canvas.toDataURL("image/png");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 generateBtn.addEventListener("click", generateQR);
+downloadBtn.addEventListener("click", downloadQR)
