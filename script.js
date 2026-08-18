@@ -32,7 +32,7 @@ function generateQR() {
     canvas.width = totalSize;
     canvas.height = totalSize;
 
-    ctx.fillstyle = "white";
+    ctx.fillStyle = "white";
     ctx.fillRect(0, 0, totalSize, totalSize);
 
     for (let row = 0; row < moduleCount; row++) {
@@ -40,9 +40,9 @@ function generateQR() {
         for (let col = 0; col < moduleCount; col++) {
 
             if (qr.isDark(row, col)) {
-                ctx.fillstyle = "black";
-                ctx.fllRect(
-                    (col + magin) * cellSize,
+                ctx.fillStyle = "black";
+                ctx.fillRect(
+                    (col + margin) * cellSize,
                     (row + margin) * cellSize,
                     cellSize,
                     cellSize
@@ -55,13 +55,4 @@ function generateQR() {
     message.style.display = "none";
 }
 
-
-input.addEventListener(
-    "keydown",
-    function (event) {
-        if (event.key === "Enter") {
-
-            generateQR();
-        }
-    }
-)
+generateBtn.addEventListener("click", generateQR);
