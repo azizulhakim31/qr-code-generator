@@ -36,3 +36,45 @@ h1 {
   color: lightgray;
   font-size: 16px;
 }
+
+.input_group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+  transition: 0.2s;
+}
+
+button {
+  border: none;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: #264aac;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0px);
+}
