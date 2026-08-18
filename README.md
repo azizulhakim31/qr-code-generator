@@ -13,11 +13,11 @@ A simple and elegant web-based QR code generator that allows you to convert text
 
 ## How to Use
 
-**1.** Open `index.html` in your web browser
-**2.** Enter text, URL, or any information in the input field
-**3.** Click the "Generate QR" button
-**4.** The QR code will appear on the canvas
-**5.** Click "Download PNG" to save the QR code to your device
+1. Open `index.html` in your web browser
+2. Enter text, URL, or any information in the input field
+3. Click the "Generate QR" button
+4. The QR code will appear on the canvas
+5. Click "Download PNG" to save the QR code to your device
 
 ## Technical Details
 
